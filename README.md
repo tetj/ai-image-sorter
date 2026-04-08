@@ -17,6 +17,18 @@ The intended workflow is to run `suggest.py` first, then paste the output into `
 
 ## Requirements
 
+### 1. Install Python
+Download and install Python 3.10 or newer from [python.org](https://www.python.org/downloads/).
+
+> **Windows users**: during installation, make sure to check **"Add Python to PATH"**, otherwise `python` and `pip` won't be recognized in the terminal.
+
+Verify it's working:
+```bash
+python --version
+```
+
+### 2. Install dependencies
+
 ```bash
 pip install ollama tqdm
 ```
