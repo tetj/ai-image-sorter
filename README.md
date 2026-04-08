@@ -69,6 +69,33 @@ python sort.py
 ```
 
 
+## Recommended Specs
+
+The bottleneck is almost entirely the vision model (`qwen2.5vl:7b`), not the script itself.
+
+### Minimum (slow but functional)
+- **GPU**: 8 GB VRAM (e.g. RTX 3070, RX 6700 XT) — fits the 7B model in VRAM at 4-bit quantization
+- **RAM**: 16 GB
+- **CPU**: Any modern quad-core (used only for image loading/moving)
+- **Storage**: ~5 GB free for the model weights
+
+Expect roughly **5–15 seconds per image** — 500 images would take 1–2 hours.
+
+### Recommended (comfortable)
+- **GPU**: 12 GB VRAM (e.g. RTX 4070) — fits the model comfortably with headroom
+- **RAM**: 32 GB
+- **Storage**: SSD recommended, the model loads faster
+
+Roughly **2–5 seconds per image**.
+
+### No GPU / CPU only
+It will still run via Ollama, but expect **30–60 seconds per image** — only practical for very small batches.
+
+### Tips to speed things up
+- `qwen2.5vl:7b` in **Q4 quantization** (Ollama's default) — good balance of speed and accuracy
+- Less VRAM? Try `moondream` or `llava:7b` — lighter models, slightly less accurate
+- Large DSLR/RAW files slow things down significantly — add a resize step with Pillow before sorting
+
 ## Notes
 
 - Supported formats: `.jpg`, `.jpeg`, `.png`, `.webp`, `.gif`, `.bmp`
