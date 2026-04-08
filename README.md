@@ -1,15 +1,17 @@
-# 🖼️ AI Image Sorter
+# AI Image Sorter
 
-Automatically organize your images into folders using a local AI vision model via [Ollama](https://ollama.com). No cloud, no API keys — runs entirely on your machine.
+Automatically organize your images into folders using a local AI vision model via [Ollama](https://ollama.com). 
+
+No cloud, no API keys : runs entirely on your machine.
 
 ## Scripts
 
 | Script | Description |
 |---|---|
-| `suggest_categories.py` | Analyzes a sample of your images and suggests folder categories |
-| `sort_images.py` | Sorts images into folders based on your category list |
+| `suggest.py` | Analyzes a sample of your images and suggests folder categories |
+| `sort.py` | Sorts images into folders based on your category list |
 
-The intended workflow is to run `suggest_categories.py` first, then paste the output into `sort_images.py`.
+The intended workflow is to run `suggest.py` first, then paste the output into `sort.py`.
 
 ## Requirements
 
@@ -26,31 +28,41 @@ ollama pull qwen2.5vl:7b
 ## Usage
 
 ### 1. Suggest categories
-Edit `SOURCE_DIR` in `suggest_categories.py`, then run:
+
+
+This step is optional. Indeed, instead, you can simply decide your categories by yourself, see Step #2.
+
+
+Edit `SOURCE_DIR` in `suggest.py`, then run:
 ```bash
-python suggest_categories.py
+python suggest.py
 ```
 It samples up to 50 images, describes each one, and outputs a ready-to-paste `CATEGORIES` list.
 
 ### 2. Sort images
-Paste the suggested categories into `sort_images.py` and set your `SOURCE_DIR`. Categories are **priority-ordered** — the first match wins.
+
+a) Edit the categories to fit your needs by editing the CATEGORIES in `sort.py`.
+And set your own `SOURCE_DIR`. 
+Categories are **priority-ordered** : the first match wins.
+For example, in the example below, a picture of a running shoe would be moved to shoes.
+And a screenshot of a Strava run would be moved to Running.
+
 
 ```python
 CATEGORIES = [
-    "Shoes",      # a running shoe → "Shoes", not "Running"
+    "Shoes",  
     "Running",
-    "Dog",        # a dog with kids → "Dog", not "Kids"
+    "Dog",  
     "Kids",
     ...
 ]
 ```
 
-Do a dry run first (enabled by default) to preview results without moving anything:
+b) run the script :
 ```bash
-python sort_images.py
+python sort.py
 ```
 
-Then set `DRY_RUN = False` and run again to move the files.
 
 ## Notes
 
