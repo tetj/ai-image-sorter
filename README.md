@@ -76,7 +76,7 @@ python sort.py
 The bottleneck is almost entirely the vision model (`qwen2.5vl:7b`), not the script itself.
 
 ### Minimum (slow but functional)
-- **GPU**: 8 GB VRAM (e.g. RTX 3070, RX 6700 XT) — fits the 7B model in VRAM at 4-bit quantization
+- **GPU**: 8 GB VRAM (e.g. RTX 3070, RX 6700 XT)
 - **RAM**: 16 GB
 - **CPU**: Any modern quad-core (used only for image loading/moving)
 - **Storage**: ~5 GB free for the model weights
