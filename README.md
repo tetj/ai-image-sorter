@@ -4,7 +4,7 @@ Automatically organize your images into folders using a local AI vision model vi
 
 No cloud, no API keys : runs entirely on your machine.
 
-But requires a powerful machine (see recommended specs below)
+But requires a powerful machine (see [recommended specs](https://github.com/tetj/ai-image-sorter/tree/main?tab=readme-ov-file#recommended-specs) below)
 
 ## Scripts
 
