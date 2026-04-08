@@ -41,10 +41,15 @@ It samples up to 50 images, describes each one, and outputs a ready-to-paste `CA
 
 ### 2. Sort images
 
-a) Edit the categories to fit your needs by editing the CATEGORIES in `sort.py`.
-And set your own `SOURCE_DIR`. 
+a) Edit `sort.py` :
+
+- Set your own `SOURCE_DIR`. 
+- Edit the `CATEGORIES` to fit your needs.
+
 Categories are **priority-ordered** : the first match wins.
+
 For example, in the example below, a picture of a running shoe would be moved to shoes.
+
 And a screenshot of a Strava run would be moved to Running.
 
 
