@@ -26,7 +26,7 @@ CATEGORIES = [
     "Technology",    
 ]
 
-MODEL = "qwen2.5vl:7b"  # Must be a vision-capable model
+MODEL = "qwen3-vl:8b"  # Must be a vision-capable model
 
 # Set to True to preview without moving anything
 DRY_RUN = False
