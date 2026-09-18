@@ -8,7 +8,7 @@ from collections import Counter
 # --- CONFIGURATION ---
 SOURCE_DIR = Path(r"YOUR_PATH")  # 📁 Change this
 
-MODEL = "qwen2.5vl:7b"  # Must be a vision-capable model
+MODEL = "qwen3-vl:8b"  # Must be a vision-capable model
 
 # How many images to sample (set to None to scan all)
 SAMPLE_SIZE = 50
