@@ -36,7 +36,7 @@ pip install ollama tqdm
 You also need [Ollama](https://ollama.com) installed with a vision-capable model pulled:
 
 ```bash
-ollama pull qwen2.5vl:7b
+ollama pull qwen3-vl:8b
 ```
 
 ## Usage
@@ -85,7 +85,7 @@ python sort.py
 
 ## Recommended Specs
 
-The bottleneck is almost entirely the vision model (`qwen2.5vl:7b`), not the script itself.
+The bottleneck is almost entirely the vision model (`qwen3-vl:8b`), not the script itself.
 
 ### Minimum (slow but functional)
 - **GPU**: 8 GB VRAM (e.g. RTX 3070, RX 6700 XT)
@@ -93,7 +93,7 @@ The bottleneck is almost entirely the vision model (`qwen2.5vl:7b`), not the scr
 - **CPU**: Any modern quad-core (used only for image loading/moving)
 - **Storage**: ~5 GB free for the model weights
 
-Expect roughly **5–15 seconds per image** -> 500 images would take 1–2 hours.
+Expect roughly **5–15 seconds per image** -> 500 images would take 1 hour.
 
 ### Recommended (comfortable)
 - **GPU**: 12 GB VRAM (e.g. RTX 4070) -> fits the model comfortably with headroom
